@@ -4,7 +4,10 @@ pub struct UID(pub String);
 
 impl UID {
     pub fn get_region(&self) -> Regions {
-        if ['1','2','5'].into_iter().any(|v| v == self.0.chars().next().unwrap()) {
+        if ['1', '2', '5']
+            .into_iter()
+            .any(|v| v == self.0.chars().next().unwrap())
+        {
             Regions::CN
         } else {
             Regions::OS
@@ -20,7 +23,7 @@ impl UID {
             '7' => "os_euro",
             '8' => "os_asia",
             '9' => "os_cht",
-            _ => panic!("Invalid uid")
+            _ => panic!("Invalid uid"),
         })
     }
 }
